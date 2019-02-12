@@ -1,6 +1,7 @@
 getwd()
 car <- read.csv("~/Desktop/car.txt", sep="")
-carq <- read.csv("~/Desktop/car_quant.txt", sep="")
+is.fact <- sapply(car, is.factor)
+carq <- car[,is.fact] #on récupère les variables qualitatives
 set.seed(99)
 attach(car)
 
